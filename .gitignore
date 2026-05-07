@@ -1,0 +1,60 @@
+# Large genomic data — host externally (Zenodo / OSF)
+*.fa
+*.fasta
+*.fa.gz
+*.fasta.gz
+*.fai
+*.bam
+*.bai
+*.cram
+*.crai
+*.vcf
+*.vcf.gz
+*.tbi
+*.bigwig
+*.bw
+*.bigbed
+*.bb
+*.h5
+*.gtf
+*.gtf.gz
+*.gff
+*.gff.gz
+*.paf
+*.paf.gz
+
+# Heavy CSV outputs (host externally if > 25 MB)
+alphagenome_scores.csv
+alphagenome_scores.csv.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+
+# Conda
+.conda/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs / temp
+*.log
+*.tmp
+tmp/
+scratch/
