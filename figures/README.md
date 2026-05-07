@@ -8,15 +8,15 @@ These figures are publication-ready and appear (or are intended to appear) in th
 |------|---------------|
 | `Fig3_ASE_combined.pdf` / `.png` | Gene-level allele-specific expression: hap1 vs hap2 read counts and hap1 fractions across SNCA, HTT, LRRK2, GBA1, SMN1, SMN2 in iPSC, FPP, astrocyte, microglia. **Published as Figure 3 in Patil et al. bioRxiv 2026.03.26.714432.** |
 
-## Exploratory figures (`exploratory/`)
+## Scratch figures (`scratch/`)
 
-These figures were generated during downstream analysis exploration and are **not finalized**. Layout, labeling, and panel selection are draft-quality and may change. They are kept here for transparency about what has been computed, not as final scientific claims.
+Quick first-pass figures generated as an exercise to see what the data looks like — **not finalized and not formal scientific claims**. Layout, labeling, and panel selection are rough; kept here for transparency about what has been computed.
 
 | File | What it shows | Status |
 |---|---|---|
-| `exploratory/Fig_AlphaGenome_results.pdf` / `.png` | 4-panel AlphaGenome overview: max-quantile scatter, TF-disruption heatmap, regulatory-mechanism breakdown, haplotype burden vs ASE | Exploratory — panel D labeling incomplete |
-| `exploratory/Fig_UCSC_Tracks.pdf` / `.png` | UCSC-browser-style variant landscape (±500 kb) per gene, CADD-binned variants | Exploratory — styling not polished |
-| `exploratory/Fig_Variant_Annotation.pdf` / `.png` | 3-panel: CADD distributions, consequence-class breakdown, gene maps with GWAS hits | Exploratory — most polished of the three; intended panel D not yet implemented |
+| `scratch/Fig_AlphaGenome_results.pdf` / `.png` | 4-panel AlphaGenome overview: max-quantile scatter, TF-disruption heatmap, regulatory-mechanism breakdown, haplotype burden vs ASE | Scratch — panel D labeling incomplete |
+| `scratch/Fig_UCSC_Tracks.pdf` / `.png` | UCSC-browser-style variant landscape (±500 kb) per gene, CADD-binned variants | Scratch — styling not polished |
+| `scratch/Fig_Variant_Annotation.pdf` / `.png` | 3-panel: CADD distributions, consequence-class breakdown, gene maps with GWAS hits | Scratch — most polished of the three; intended panel D not yet implemented |
 
 ## Regenerating figures
 

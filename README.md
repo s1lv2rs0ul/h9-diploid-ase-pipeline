@@ -70,7 +70,7 @@ T2T H9 diploid genome (hap1 + hap2)
 │
 ├── figures/                                # figures (PDF + PNG)
 │   ├── Fig3_ASE_combined.{pdf,png}         # published — paper Fig 3
-│   ├── exploratory/                        # exploratory / draft figures (not publication-ready)
+│   ├── scratch/                            # rough first-pass figures (not publication-ready)
 │   └── README.md
 ├── docs/                                   # GitHub Pages source (optional)
 ├── environment.yml                         # conda env
