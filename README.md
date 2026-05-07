@@ -68,7 +68,10 @@ T2T H9 diploid genome (hap1 + hap2)
 │   ├── alphagenome_top_effects.csv
 │   └── tf_differential_binding.csv
 │
-├── figures/                                # final figures (PDF + PNG)
+├── figures/                                # figures (PDF + PNG)
+│   ├── Fig3_ASE_combined.{pdf,png}         # published — paper Fig 3
+│   ├── exploratory/                        # exploratory / draft figures (not publication-ready)
+│   └── README.md
 ├── docs/                                   # GitHub Pages source (optional)
 ├── environment.yml                         # conda env
 ├── CITATION.cff
