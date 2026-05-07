@@ -2,17 +2,15 @@ cff-version: 1.2.0
 message: "If you use this pipeline, please cite the associated paper."
 title: "H9 Diploid ASE Pipeline: allele-specific expression and non-coding regulatory variant prioritization in H9 hESC"
 authors:
-  - family-names: Patil
-    given-names: Shruti
+  - family-names: Sawarkar
+    given-names: Niraj
+    affiliation: Rockefeller University
 date-released: 2026-05-04
 license: MIT
-repository-code: "https://github.com/<your-username>/h9-diploid-ase-pipeline"
+repository-code: "https://github.com/s1lv2rs0ul/h9-diploid-ase-pipeline"
 references:
   - type: article
     title: "The diploid reference genome of a human embryonic stem cell line"
-    authors:
-      - family-names: Patil
-        given-names: Shruti
     year: 2026
     journal: bioRxiv
     doi: "10.1101/2026.03.26.714432"
