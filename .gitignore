@@ -57,4 +57,5 @@ ENV/
 *.log
 *.tmp
 tmp/
-scratch/
+.scratch/
+# NOTE: figures/*/scratch/ is intentionally tracked (first-pass figures)
