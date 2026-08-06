@@ -4,14 +4,18 @@
 
 Companion repository to:
 
-> Sawarkar et al. *The diploid reference genome of a human embryonic stem cell line.* bioRxiv 2026.03.26.714432. <https://www.biorxiv.org/content/10.64898/2026.03.26.714432v1>
+> Pačar et al. *The diploid reference genome of a human embryonic stem cell line.* bioRxiv 2026.03.26.714432. <https://www.biorxiv.org/content/10.64898/2026.03.26.714432v1>
 
 This repository contains the scripts, small input files, and result tables/figures for **two related projects** at five neurodegeneration risk loci (SNCA, HTT, LRRK2, GBA1, SMN1/2) in H9 human embryonic stem cells across four lineages (iPSC, floor-plate progenitors, astrocytes, microglia), built on the haplotype-resolved T2T H9 diploid assembly (`t2t_h9_v01`):
 
-1. **`paper_published/`** — variant catalog and gene-level ASE analysis as reported in the Sawarkar et al. paper.
+1. **`paper_published/`** — variant catalog and gene-level ASE analysis as reported in the Pačar et al. paper.
 2. **`followup_inprogress/`** — unpublished follow-up: AlphaGenome-based non-coding regulatory variant prioritization, building on the paper's data.
 
 Every script, data file, result, and figure folder is partitioned into these two sections so the boundary between published and in-progress work is explicit.
+
+## For biologists — interactive notebook
+
+<a href="https://colab.research.google.com/github/s1lv2rs0ul/h9-diploid-ase-pipeline/blob/main/notebooks/hg38_to_T2T_ASE.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> — run the ASE pipeline on your own BAM (bulk or 10x scRNA-seq) with zero coding required. See [`notebooks/README.md`](notebooks/README.md).
 
 ---
 
@@ -20,7 +24,7 @@ Every script, data file, result, and figure folder is partitioned into these two
 ```
 .
 ├── scripts/
-│   ├── paper_published/               ← variant calling + gene-level ASE (Sawarkar et al. 2026)
+│   ├── paper_published/               ← variant calling + gene-level ASE (Pačar et al. 2026)
 │   │   ├── 01_build_master_variants.py
 │   │   ├── 02_count_ase_gene_level.sh
 │   │   ├── 03_count_ase_per_variant.py
@@ -61,7 +65,7 @@ Every script, data file, result, and figure folder is partitioned into these two
 
 ## Pipeline overview
 
-### Paper-published (already in Sawarkar et al. 2026)
+### Paper-published (already in Pačar et al. 2026)
 
 ```
 T2T H9 diploid genome (hap1 + hap2 FASTAs)
