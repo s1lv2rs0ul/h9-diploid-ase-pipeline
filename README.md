@@ -43,7 +43,7 @@ Every script, data file, result, and figure folder is partitioned into these two
 │
 ├── data/
 │   ├── small_inputs/
-│   │   ├── paper_published/           ← ase_gene_level_counts.csv (Fig 3 data)
+│   │   ├── paper_published/           ← ase_gene_level_counts.csv (Supp Fig 27 data)
 │   │   └── followup_inprogress/       ← AlphaGenome inputs, hg38 liftover, dipcall validation
 │   ├── EXTERNAL_DATA.md                ← Zenodo / OSF / UCSC links for big files
 │   └── README.md
@@ -54,7 +54,7 @@ Every script, data file, result, and figure folder is partitioned into these two
 │       └── README.md  (in results/)
 │
 ├── figures/
-│   ├── paper_published/               ← Fig3_ASE_combined (paper Fig 3)
+│   ├── paper_published/               ← SuppFig27_ASE_combined (paper Supp Fig 27)
 │   └── followup_inprogress/scratch/   ← rough first-pass figures (not publication-ready)
 │       └── README.md  (in figures/)
 │
@@ -74,7 +74,7 @@ T2T H9 diploid genome (hap1 + hap2 FASTAs)
         │       → het variant catalog (4,515 variants)
         │
         └─ haplotype-phased RNA-seq (.ase.bam, 4 lineages)
-                → gene-level ASE counts ────────► Paper Fig 3
+                → gene-level ASE counts ────────► Paper Supp Fig 27
                 → per-variant ASE counts (used as input to follow-up)
 ```
 
@@ -139,7 +139,16 @@ You will need (see [`data/EXTERNAL_DATA.md`](data/EXTERNAL_DATA.md) for sources)
 
 Run the paper-published scripts first (in `scripts/paper_published/`, numbered 01–03), then the follow-up scripts (in `scripts/followup_inprogress/`, numbered 01–08).
 
-**Note:** several scripts currently use hard-coded paths (e.g. `/Users/.../reganalysis/`); a path-portability refactor is on the to-do list.
+**Paths:** no script contains a machine-specific path. All locations come from `scripts/h9_paths.py`, controlled by two environment variables:
+
+| Variable | Meaning | Default |
+|---|---|---|
+| `H9_ASE_DATA_ROOT` | Working directory holding the large inputs and intermediate outputs (`genomes/`, `ase/`, `ase_v2/`, `annotations/`, `results/`, `vep_redo/`, `variant_catalog/`, `clean_analysis/`) | `~/reganalysis` |
+| `SAMTOOLS` | samtools executable | `samtools` on `PATH` |
+
+```bash
+export H9_ASE_DATA_ROOT=/path/to/your/data
+```
 
 ## Citation
 

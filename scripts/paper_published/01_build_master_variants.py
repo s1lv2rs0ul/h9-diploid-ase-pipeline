@@ -23,7 +23,12 @@ import sys
 import pandas as pd
 import numpy as np
 
-BASE = os.path.expanduser('~/reganalysis')
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import DATA_ROOT  # noqa: E402  (central path config)
+
+BASE = DATA_ROOT
 OUT = os.path.join(BASE, 'clean_analysis/variants/master_variants.csv')
 
 # ── Trusted input files ──

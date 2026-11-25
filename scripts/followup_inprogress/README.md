@@ -32,6 +32,6 @@ Take the variants and ASE evidence generated for the paper, score them with Alph
 ## What's missing / known issues
 
 1. **`04_integrate_ase_alphagenome.py` is a placeholder** — the original build script was lost. The output table is preserved under `results/followup_inprogress/integrated_variant_analysis.csv`; the rebuild needs to reproduce the same columns and `priority_score` formula.
-2. **Hard-coded paths** — several scripts reference absolute paths under `~/reganalysis/`. Path-portability refactor pending.
+2. **Data location** — scripts read large inputs from the directory named by `H9_ASE_DATA_ROOT` (default `~/reganalysis/`); see `scripts/h9_paths.py`. They do not yet read the copies committed under `data/` and `results/`.
 3. **Evo2 scoring not yet run** — sequences are extracted (in `master_variants.csv`) but scoring needs GPU. Will be added as a parallel scoring step alongside AlphaGenome.
 4. **SMN1 hg38 liftover gap** — only 81/573 SMN1 SNVs have hg38 coordinates because of segmental-duplication divergence between our minimap2 alignment and UCSC dipcall. Either deferred or needs a SMN1-specific alignment fix.

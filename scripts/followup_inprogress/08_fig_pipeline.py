@@ -19,7 +19,12 @@ plt.rcParams.update({
     'savefig.bbox': 'tight',
 })
 
-BASE = os.path.expanduser('~/reganalysis')
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import DATA_ROOT  # noqa: E402  (central path config)
+
+BASE = DATA_ROOT
 
 fig, ax = plt.subplots(figsize=(7.5, 10))
 ax.set_xlim(0, 10)

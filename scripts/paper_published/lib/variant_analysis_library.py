@@ -33,12 +33,16 @@ from collections import defaultdict
 # ════════════════════════════════════════════════════════════════════════════
 # PATHS & CONSTANTS
 # ════════════════════════════════════════════════════════════════════════════
-BASE      = os.path.expanduser('~/reganalysis')
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..'))
+from h9_paths import DATA_ROOT, SAMTOOLS  # noqa: E402  (central path config)
+
+BASE      = DATA_ROOT
 ASE_DIR   = os.path.join(BASE, 'ase')
 GENOMES   = os.path.join(BASE, 'genomes')
 RESULTS   = os.path.join(BASE, 'results')
 ASE_V2    = os.path.join(BASE, 'ase_v2')
-SAMTOOLS  = '/opt/homebrew/bin/samtools'
 
 # Reference genomes
 HG38_REF    = os.path.join(GENOMES, 'hg38.fa')
@@ -296,7 +300,7 @@ def count_ase_all_celltypes(gene, hap1_abs, hap2_abs):
 
 def count_gene_level_ase(gene, celltype):
     """
-    Count total gene-level ASE reads (as done in Figure 3).
+    Count total gene-level ASE reads (as done in Supplementary Figure 27).
     Uses `samtools view -c` on the entire gene body region.
 
     Returns: (hap1_total, hap2_total)

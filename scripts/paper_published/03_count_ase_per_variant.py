@@ -23,10 +23,14 @@ import csv
 import subprocess
 from collections import defaultdict
 
-BASE     = os.path.expanduser('~/reganalysis')
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import DATA_ROOT, SAMTOOLS  # noqa: E402  (central path config)
+
+BASE     = DATA_ROOT
 ASE_DIR  = os.path.join(BASE, 'ase')
 HG38_REF = os.path.join(BASE, 'genomes/hg38.fa')
-SAMTOOLS = '/opt/homebrew/bin/samtools'
 OUT_CSV  = os.path.join(BASE, 'ase_v2/all_variants_astrocyte_ase_evo2.csv')
 FLANK    = 512  # for Evo2 sequences
 

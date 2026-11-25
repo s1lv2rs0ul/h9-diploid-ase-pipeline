@@ -4,9 +4,23 @@
 # Uses .ase.bam files (gene body, introns included) + diploid BAMs for totals
 # ============================================================================
 
-SAMTOOLS="/opt/homebrew/bin/samtools"
-ASE_DIR="$HOME/reganalysis/ase"
-OUT="$HOME/reganalysis/ase_v2/ase_all_genes_counts.tsv"
+# Paths: override with environment variables (same ones scripts/h9_paths.py uses)
+#   H9_ASE_DATA_ROOT  working data directory (default: ~/reganalysis)
+#   SAMTOOLS          samtools executable   (default: samtools on PATH)
+DATA_ROOT="${H9_ASE_DATA_ROOT:-$HOME/reganalysis}"
+SAMTOOLS="${SAMTOOLS:-samtools}"
+ASE_DIR="$DATA_ROOT/ase"
+OUT="$DATA_ROOT/ase_v2/ase_all_genes_counts.tsv"
+
+if ! command -v "$SAMTOOLS" >/dev/null 2>&1; then
+  echo "ERROR: samtools not found ($SAMTOOLS). Install it or set SAMTOOLS." >&2
+  exit 1
+fi
+if [ ! -d "$ASE_DIR" ]; then
+  echo "ERROR: BAM directory not found: $ASE_DIR. Set H9_ASE_DATA_ROOT." >&2
+  exit 1
+fi
+mkdir -p "$(dirname "$OUT")"
 
 echo -e "Gene\tCellType\tHap1_ASE\tHap2_ASE\tDiploid_Total" > "$OUT"
 

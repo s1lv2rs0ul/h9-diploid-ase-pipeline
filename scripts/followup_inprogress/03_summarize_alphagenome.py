@@ -16,7 +16,12 @@ import os
 import pandas as pd
 import numpy as np
 
-BASE    = os.path.expanduser('~/reganalysis/variant_catalog')
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import data_path  # noqa: E402  (central path config)
+
+BASE    = data_path('variant_catalog')
 RAW_CSV = os.path.join(BASE, 'alphagenome_scores.csv')
 CHUNK   = 500_000  # rows per chunk
 

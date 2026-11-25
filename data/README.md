@@ -19,7 +19,7 @@ data/
 
 ### `ase_gene_level_counts.csv`
 
-Gene-level allele-specific expression counts produced by `scripts/paper_published/02_count_ase_gene_level.sh`. **This is the data behind Fig 3 of the paper.**
+Gene-level allele-specific expression counts produced by `scripts/paper_published/02_count_ase_gene_level.sh`. **This is the data behind Supp Fig 27 of the paper.**
 
 | column | meaning |
 |--------|---------|

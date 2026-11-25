@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Build the Colab notebook for H9 ASE analysis, biologist-oriented.
-Writes to ~/h9-diploid-ase-pipeline/notebooks/hg38_to_T2T_ASE.ipynb
+Writes to notebooks/hg38_to_T2T_ASE.ipynb in this repository
 """
 
 import nbformat as nbf
@@ -623,7 +623,9 @@ Region-restricted extraction reads only the parts you need (via `samtools view -
 nb['cells'] = cells
 
 # Write out
-out_path = os.path.expanduser("~/h9-diploid-ase-pipeline/notebooks/hg38_to_T2T_ASE.ipynb")
+out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
+                        "notebooks", "hg38_to_T2T_ASE.ipynb")
+out_path = os.path.normpath(out_path)
 os.makedirs(os.path.dirname(out_path), exist_ok=True)
 with open(out_path, 'w') as f:
     nbf.write(nb, f)

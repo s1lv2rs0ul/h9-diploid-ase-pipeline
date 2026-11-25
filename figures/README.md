@@ -5,8 +5,8 @@ Figures are partitioned by project:
 ```
 figures/
 ├── paper_published/             ← figures already in Sawarkar et al. 2026
-│   ├── Fig3_ASE_combined.pdf
-│   └── Fig3_ASE_combined.png
+│   ├── SuppFig27_ASE_combined.pdf
+│   └── SuppFig27_ASE_combined.png
 └── followup_inprogress/         ← figures from unpublished AlphaGenome follow-up
     └── scratch/                 ← rough first-pass exercises (not publication-ready)
         ├── Fig_AlphaGenome_results.pdf / .png
@@ -18,7 +18,7 @@ figures/
 
 | File | What it shows |
 |------|---------------|
-| `Fig3_ASE_combined.pdf` / `.png` | Gene-level allele-specific expression: hap1 vs hap2 read counts and hap1 fractions across SNCA, HTT, LRRK2, GBA1, SMN1, SMN2 in iPSC, FPP, astrocyte, microglia. **Figure 3 in Sawarkar et al. bioRxiv 2026.03.26.714432.** |
+| `SuppFig27_ASE_combined.pdf` / `.png` | Gene-level allele-specific expression: hap1 vs hap2 read counts and hap1 fractions across SNCA, HTT, LRRK2, GBA1, SMN1, SMN2 in iPSC, FPP, astrocyte, microglia. **Supplementary Figure 27 in Sawarkar et al. bioRxiv 2026.03.26.714432.** |
 
 ## followup_inprogress/scratch/
 
@@ -41,4 +41,4 @@ python ../scripts/followup_inprogress/07_fig_variant_annotation.py
 python ../scripts/followup_inprogress/08_fig_pipeline.py
 ```
 
-Note: scripts currently reference hard-coded paths under `~/reganalysis/`; portability refactor is on the to-do list.
+Note: figure scripts read their inputs from, and write to, the directory named by `H9_ASE_DATA_ROOT` (default `~/reganalysis/`); see `scripts/h9_paths.py`.

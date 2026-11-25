@@ -47,12 +47,16 @@ import matplotlib.gridspec as gridspec
 # ══════════════════════════════════════════════════════════════
 # PATHS
 # ══════════════════════════════════════════════════════════════
-HOME = os.path.expanduser('~')
-GENE_ASE   = f'{HOME}/reganalysis/ase_v2/ase_all_genes_complete.csv'
-INTEGRATED = f'{HOME}/reganalysis/clean_analysis/variants/integrated_variant_analysis.csv'
-BRAIN_AG   = f'{HOME}/Documents/T2T/variant_catalog/alphagenome/scores/alphagenome_brain_scores.csv'
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..'))
+from h9_paths import DATA_ROOT, REPO_ROOT  # noqa: E402  (central path config)
 
-REPO       = f'{HOME}/h9-diploid-ase-pipeline'
+GENE_ASE   = f'{DATA_ROOT}/ase_v2/ase_all_genes_complete.csv'
+INTEGRATED = f'{DATA_ROOT}/clean_analysis/variants/integrated_variant_analysis.csv'
+BRAIN_AG   = f'{REPO_ROOT}/results/followup_inprogress/alphagenome_brain_scores.csv'
+
+REPO       = REPO_ROOT
 OUT_DIR    = f'{REPO}/results/followup_inprogress/poc'
 FIG_DIR    = f'{REPO}/figures/followup_inprogress/scratch'
 SUMMARY    = f'{OUT_DIR}/poc_snca_summary.txt'
@@ -197,7 +201,7 @@ def write_report(per_ct, astro_vs_others, snca_gb, snca_with_dir):
     lines.append("═" * 78)
     lines.append("")
 
-    lines.append("── 1. Gene-level ASE (H9 T2T diploid, from paper Fig 3) ──────────────")
+    lines.append("── 1. Gene-level ASE (H9 T2T diploid, from paper Supp Fig 27) ──────────────")
     lines.append(per_ct.to_string(index=False, float_format='%.4g'))
     lines.append("")
     lines.append(f"Astrocyte vs pooled other cell types (Fisher's exact):")

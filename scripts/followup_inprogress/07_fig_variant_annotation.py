@@ -17,7 +17,12 @@ from matplotlib.patches import FancyBboxPatch
 import warnings
 warnings.filterwarnings('ignore')
 
-BASE = '/Users/shruti.patil/reganalysis'
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import DATA_ROOT  # noqa: E402  (central path config)
+
+BASE = DATA_ROOT
 VEP_CSV  = f'{BASE}/vep_redo/vep_het_official_hg38.csv'
 AG_CSV   = f'{BASE}/variant_catalog/alphagenome/scores/alphagenome_variant_summary.csv'
 ASE_CSV  = f'{BASE}/ase_v2/ase_all_genes_complete.csv'

@@ -11,7 +11,7 @@ These are the upstream variant-calling and gene-level ASE counting steps. The me
 | # | Script | What it does |
 |---|--------|--------------|
 | 01 | `01_build_master_variants.py` | CIGAR-parse hap1↔hap2 PAF alignments → het variant catalog (4,515 variants across SNCA, HTT, LRRK2, GBA, SMN1/2). Classifies `in_gene_body` from CAT GTF transcript spans. |
-| 02 | `02_count_ase_gene_level.sh` | Count haplotype-specific reads in gene-body intervals across iPSC, FPP, astrocyte, microglia from `.ase.bam` files. Output is the data behind **Fig 3** of the paper. |
+| 02 | `02_count_ase_gene_level.sh` | Count haplotype-specific reads in gene-body intervals across iPSC, FPP, astrocyte, microglia from `.ase.bam` files. Output is the data behind **Supp Fig 27** of the paper. |
 | 03 | `03_count_ase_per_variant.py` | Count haplotype reads at every individual het position (per-variant ASE table) — generated as part of the paper data products, not used as a published headline result. |
 | — | `lib/variant_analysis_library.py` | Shared helpers: position arithmetic (`rel_to_abs`), gene-body membership tests, samtools wrappers. |
 

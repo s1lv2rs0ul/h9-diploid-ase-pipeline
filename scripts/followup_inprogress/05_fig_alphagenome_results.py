@@ -18,7 +18,12 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # ── Paths ──
-BASE = '/Users/shruti.patil/reganalysis'
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import DATA_ROOT  # noqa: E402  (central path config)
+
+BASE = DATA_ROOT
 SUMMARY = f'{BASE}/variant_catalog/alphagenome/scores/alphagenome_variant_summary.csv'
 BRAIN   = f'{BASE}/variant_catalog/alphagenome/scores/alphagenome_brain_scores.csv'
 TOP     = f'{BASE}/variant_catalog/alphagenome/scores/alphagenome_top_effects.csv'

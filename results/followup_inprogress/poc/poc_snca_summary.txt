@@ -2,7 +2,7 @@
 PROOF OF CONCEPT — SNCA astrocyte ASE flip
 ══════════════════════════════════════════════════════════════════════════════
 
-── 1. Gene-level ASE (H9 T2T diploid, from paper Fig 3) ──────────────
+── 1. Gene-level ASE (H9 T2T diploid, from paper Supp Fig 27) ──────────────
  CellType  Hap1_ASE  Hap2_ASE  Total  hap1_frac  p_vs_0.5 signif
      iPSC        33        32     65     0.5077         1     no
       FPP        54        52    106     0.5094    0.9227     no

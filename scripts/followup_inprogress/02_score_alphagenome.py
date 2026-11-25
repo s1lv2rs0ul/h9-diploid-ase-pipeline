@@ -30,7 +30,12 @@ import time
 # ════════════════════════════════════════════════════════════════
 # PATHS
 # ════════════════════════════════════════════════════════════════
-BASE     = os.path.expanduser('~/reganalysis')
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import DATA_ROOT  # noqa: E402  (central path config)
+
+BASE     = DATA_ROOT
 HET_CSV  = os.path.join(BASE, 'vep_redo/het_variants_hg38_official.csv')
 OUT_DIR  = os.path.join(BASE, 'variant_catalog')
 OUT_CSV  = os.path.join(OUT_DIR, 'alphagenome_scores.csv')

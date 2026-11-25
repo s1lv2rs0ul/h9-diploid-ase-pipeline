@@ -41,7 +41,14 @@ import re
 import pandas as pd
 import numpy as np
 
-BASE = os.path.expanduser('~/reganalysis')
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from h9_paths import DATA_ROOT  # noqa: E402  (central path config)
+import tempfile
+
+BASE = DATA_ROOT
+TMP_DIR = tempfile.gettempdir()
 MASTER = os.path.join(BASE, 'clean_analysis/variants/master_variants.csv')
 UCSC_HETS = os.path.join(BASE, 'clean_analysis/variants/het_snvs_from_ucsc_diploid_vcf.csv')
 HAP1_FA = os.path.join(BASE, 'genomes/t2t_h9_v01_hap1.fa')
@@ -72,7 +79,7 @@ def align_region_to_hg38(chrom, start, end, hap_fa, label):
     base_chrom = chrom.split('_')[0]
 
     # Extract hg38 chromosome for target
-    hg38_chr_fa = f"/tmp/hg38_{base_chrom}.fa"
+    hg38_chr_fa = os.path.join(TMP_DIR, f"hg38_{base_chrom}.fa")
     if not os.path.exists(hg38_chr_fa):
         os.system(f"samtools faidx {HG38_FA} {base_chrom} > {hg38_chr_fa}")
 
@@ -128,11 +135,12 @@ def batch_get_ref_bases(chrom, positions, hg38_fa):
     """Get hg38 reference bases for a batch of positions."""
     if not positions:
         return {}
-    with open('/tmp/regions.txt', 'w') as f:
+    regions_file = os.path.join(TMP_DIR, 'h9_ase_regions.txt')
+    with open(regions_file, 'w') as f:
         for pos in sorted(positions):
             f.write(f"{chrom}:{pos}-{pos}\n")
 
-    cmd = f"samtools faidx {hg38_fa} -r /tmp/regions.txt"
+    cmd = f"samtools faidx {hg38_fa} -r {regions_file}"
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
 
     ref_bases = {}
